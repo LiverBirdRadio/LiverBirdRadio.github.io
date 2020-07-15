@@ -7,9 +7,10 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext;
 var Aurl = "http://s48.myradiostream.com:10900/listen.mp3"
 ,   Wurl = "https://s48.myradiostream.com:10901/stream"
 ,   aud = null
-,   context = new AudioContext();
+,   context = null;
 
 function player(url) {
+	context = new AudioContext();
 	var request = new XMLHttpRequest();
 	request.open('GET', url, true);
 	request.responseType = 'arraybuffer';
